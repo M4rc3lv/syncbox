@@ -1,2 +1,2 @@
 # syncbox
-My personal Dropbox-like fire storage system
+My personal Dropbox-like file storage system
