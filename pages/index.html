@@ -1,0 +1,77 @@
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <link href="favicon.png" rel="icon" type="image/x-icon">
+  <link href="stijl.css" rel="stylesheet">
+  <link href="spinner.css" rel="stylesheet">
+  <script src="jquery-3.4.1.min.js"></script>
+  <script src="jquery.cookie.js"></script>
+  <script src="client.js"></script><title>Syncbox</title>
+ </head>
+ <body>
+  <div class="main">
+   <div class="tool tooltop">
+    <a href="http://syncbox.marcelv.net" title="Syncbox"><img src="/pix/logobw.png" /></a>
+    <button id="btnToServer">Sync to server</button>    
+    <button id="btnConfig">Config</button>
+    <button id="btnSyncResult">Last result</button>
+    <button id="btnFromServer">Sync from server</button>
+   </div>
+   <div class="pathtools"><div class="path" id="path"></div>
+    <div class="ptools"><button id="btnGotoRoot" title="Go to root folder">/</button></div>
+   </div>
+   <div class="file"><div id="tree"></div></div>
+   <div class="tool toolbottom"><button id="btnDeleteFolder" title="Delete remote folder">Delete</button></div>
+  </div>
+
+  <div id="dialogWorking" class="dialog">
+   <div  class="dialoginner">
+    <div class="confirmText">
+     <div id="progressTitle">...</div>
+     <div id="progressDetail">Calculating...</div>
+     <span id="progressDetail2"></span>
+    </div>
+    <div class="progressbar">
+     <div></div>
+    </div>
+    <div class="center">
+
+     <button id="btnCancelThread" class="btnCancel">Cancel</button>
+    </div>
+   </div>
+  </div>
+
+  <div id="dialogAlert" class="dialog">
+   <div  class="dialoginner">
+    <div id="dialogText"></div>
+    <div class="center">
+     <button class="btnCancel" id="btnAlertOK">OK</button>
+    </div>
+   </div>
+  </div>
+  
+  <div id="dialogResult" class="dialog">
+   <div  class="dialoginner2">
+    <div><b>Result of last sync</b></div>
+    <div id="dialogResultText"></div>
+    <div class="center">     
+     <button id="btnResultOk">OK</button>
+    </div>
+   </div>
+  </div>
+
+  <div id="dialogConfirm" class="dialog">
+   <div  class="dialoginner">
+    <div><b>Confirm</b></div>
+    <div id="dialogConfirmText"></div>
+    <div class="center">
+     <button id="btnConfirmYes">Yes</button>
+     <button id="btnConfirmNo">No</button>
+    </div>
+   </div>
+  </div>
+
+
+ </body>
+</html>
+

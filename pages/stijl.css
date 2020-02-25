@@ -1,0 +1,337 @@
+:root {
+ --dark-green: #007A00;
+ --licht: #CDF5C1;
+ --neon: #1FD800;
+
+ --toptoolbarheight:32px;
+ --bottoolbarheight:24px;
+}
+
+@font-face {
+ font-family: 'NormaalTT';
+ src: url('fonts/Inconsolata-Regular.eot');
+ src: local('☺'), url('fonts/Inconsolata-Regular.woff') format('woff'), url('fonts/Inconsolata-Regular.ttf') format('truetype'), url('fonts/Inconsolata-Regular.svg') format('svg');
+ font-weight: normal;
+ font-style: normal;
+}
+@font-face {
+ font-family: 'BoldTT';
+ src: url('fonts/Inconsolata-Bold.eot');
+ src: local('☺'), url('fonts/Inconsolata-Bold.woff') format('woff'), url('fonts/Inconsolata-Bold.ttf') format('truetype'), url('fonts/Inconsolata-Bold.svg') format('svg');
+ font-weight: normal;
+ font-style: normal;
+}
+@font-face {
+ font-family: 'Normaal';
+ src: url('fonts/Nunito-Regular.eot');
+ src: local('☺'), url('fonts/Nunito-Regular.woff') format('woff'), url('fonts/Nunito-Regular.ttf') format('truetype'), url('fonts/Nunito-Regular.svg') format('svg');
+ font-weight: normal;
+ font-style: normal;
+}
+@font-face {
+ font-family: 'Bold';
+ src: url('fonts/Nunito-Bold.eot');
+ src: local('☺'), url('fonts/Nunito-Bold.woff') format('woff'), url('fonts/Nunito-Bold.ttf') format('truetype'), url('fonts/Nunito-Bold.svg') format('svg');
+ font-weight: normal;
+ font-style: normal;
+}
+body {
+ background-color: white;
+ font-family:Normaal;
+ font-size:18px;
+ padding:0;
+ margin:0;
+}
+
+.main {
+ width:1200px;
+ margin: 0 auto;
+}
+
+.tool {
+ background:var(--neon);
+ height:var(--bottoolbarheight);
+ margin-top:8px;
+ margin-bottom:8px;
+ border-radius:8px;
+ padding:12px;
+}
+.tools {
+ background:var(--neon);
+ border-radius:8px;
+ padding:8px;
+ line-height:24px;;
+}
+.tooltop {
+ height:var(--toptoolbarheight);
+ padding-right:28px;
+ line-height:var(--toptoolbarheight);
+}
+.tooltop img {
+ width: 48px;
+ padding-left:8px;
+ margin-top:-8px;
+ margin-right:16px;
+ display:inline-block;
+ float:left;
+}
+
+.toolbottom {
+ height:var(--bottoolbarheight);
+ padding-right:28px;
+}
+
+
+.file {
+ height:calc(100vh - var(--bottoolbarheight) - var(--toptoolbarheight) - 136px);
+}
+.blok {
+background:var(--licht);border-radius:8px;padding:8px;
+margin-top:16px;
+}
+
+button{
+ background:white;
+ border:solid 2px black;
+ border-radius:4px;
+ padding:4px;
+ margin-right:16px;
+ cursor:pointer;
+ height:34px;
+ min-width:100px;
+}
+#btnToServer {
+ background-image:url(/pix/upload.png);
+ background-size: 16px;
+ background-repeat:no-repeat;
+ background-position: 4px center;
+ padding-left:24px;
+}
+#btnSyncResult {
+ background-image:url(/pix/info.png);
+ background-size: 16px;
+ background-repeat:no-repeat;
+ background-position: 4px center;
+ padding-left:24px; border:solid 1px black;
+ margin-right:16px;
+}
+#dialogResultText {
+ overflow-y:scroll;
+ height:calc(100vh - 200px);
+}
+#btnFromServer {
+ background-image:url(/pix/download.png);
+ background-size: 16px;
+ background-repeat:no-repeat;
+ background-position: 4px center;
+ padding-left:24px;
+ margin-right:16px;
+}
+#frmConfig,#btnFromServer,#btnSyncResult {
+ display:inline;
+ float:right;
+}
+#frmConfig {margin-right:0;}
+#btnConfig {
+ background-image:url(/pix/config.png);
+ background-size: 16px;
+ background-repeat:no-repeat;
+ background-position: 4px center;
+ padding-left:24px;
+ border:solid 1px black;margin-right:0;
+ display:inline;
+ float:right;
+}
+#btnDeleteFolder {
+ background-image:url(/pix/delete.png);
+ background-size: 16px;
+ background-repeat:no-repeat;
+ background-position: 4px center;
+ padding-left:24px;
+
+ cursor:pointer;
+ border:solid 1px black;
+ height:28px;
+ padding:2px;
+}
+#dialogConfirmText {
+ margin-bottom:8px;
+}
+#btnDeleteFolder:disabled {
+ background-color:silver;
+ cursor:not-allowed;
+}
+.toolbottom {
+ text-align:right;
+ padding-right:12px;
+}
+
+
+.dialog {
+ top: 50px;
+ left: 50%;
+ position: absolute;
+ display:none;
+ z-index:100;
+}
+
+.dialoginner {
+ background:var(--licht);
+ width: 600px;
+ margin-left: -300px;
+ padding:16px;
+ border: solid 2px black;
+ border-radius:8px;
+}
+
+.dialoginner2 {
+ background:var(--licht);
+ width: 900px;
+ margin-left: -450px;
+ padding:16px;
+ border: solid 2px black;
+ border-radius:8px;
+}
+
+.progressbar {
+  background-color: black;
+  border-radius: 13px;
+  /* (height of inner div) / 2 + padding */
+  padding: 3px;
+}
+
+.progressbar>div {
+  background-color: var(--dark-green);
+  width: 40%;
+  /* Adjust with JavaScript */
+  height: 24px;
+  border-radius: 8px;
+}
+
+#progressDetail {
+ font-family:NormaalTT;
+ font-size:16px;
+}
+#progressDetail2 {
+font-family:Normaal;
+font-size:16px;
+}
+
+/* Tree, files */
+.tt,#tree {
+font-family:NormaalTT;
+}
+#tree img {
+ height:24px;
+ display:inline-block;
+ vertical-align:top;
+ margin-right:4px;
+}
+a {
+ color:var(--dark-green);
+}
+
+#tree a {
+ display:block;
+ text-decoration:none;
+ color:black;
+ padding:4px;
+ line-height:32px;
+}
+
+.file {
+ overflow-y:scroll;
+ margin-top:8px;
+}
+.fname {
+ display:inline-block;
+ width:25rem;
+ max-width:25rem;
+}
+.fsize {
+ display:inline-block;
+ text-align:right;
+ width:9rem;
+ max-width:9rem;
+ padding-right:16px;
+}
+.fdate {
+ display:inline-block;
+ width:14rem;
+ max-width:14rem;
+}
+
+
+#tree a:hover {
+ background: var(--dark-green);
+ color:white;
+}
+
+#files,.blok {
+background:var(--licht);border-radius:8px;padding:8px;
+margin-top:16px;
+}
+.wait {
+ height:80px;
+ width:100px;
+ margin: 0 auto;
+}
+
+/* Config screen */
+.label {
+ margin-top:16px;
+}
+#btnSaveConfig {
+ background-image:url(/pix/save.png);
+ background-size: 16px;
+ background-repeat:no-repeat;
+ background-position: 4px center;
+ padding-left:24px;
+}
+#btnCancel,.btnCancel {
+background-image:url(/pix/back.png);
+ background-size: 16px;
+ background-repeat:no-repeat;
+ background-position: 4px center;
+ padding-left:24px;
+}
+.center{text-align:center;}
+.btnCancel {
+ margin:0 auto;
+ width:100px;
+ margin-top:16px;
+}
+.confirmText {
+ margin-bottom:16px;
+}
+h4 {
+ margin-bottom:8px;
+ margin-top:0;
+}
+.pageicon {
+ height:16px;
+ margin-right:8px;
+}
+
+/* Path tools (new feb. 2020) */
+.pathtools {
+ font-family:BoldTT;
+ padding:12px;
+ height:24px;
+ line-height:24px;
+ background:var(--neon);
+ border-radius:8px;
+}
+.pathtools .path {
+ display:inline;
+}
+.pathtools .ptools {
+ display:inline;
+ float:right;
+}
+.pathtools button {
+ padding:2px;
+ height:28px;
+ min-width:60px;
+}
+.tools a {color:black!important;}

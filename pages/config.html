@@ -1,0 +1,43 @@
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <link href="/stijl.css" rel="stylesheet">
+  <link href="/spinner.css" rel="stylesheet">
+  <script src="/jquery-3.4.1.min.js"></script>
+  <script src="/client.js"></script>
+ </head>
+ <body>
+  <div class="main"><form id="form" method="POST" action="/storeconfig">
+
+  <div class="tool tooltop">
+   <div><img src="/pix/config.png" />Configuration</div>
+  </div>
+
+  <div class="blok">
+   <h4>Server settings (your cloud / SSH server)</h4>
+   <div class="label">Root path:</div>
+   <input type="text" name="serverpath" value="${serverpath}" /><div class="inf">Path (on the server!) to store your data e.g. <span class="tt">/media/john/MyDisk</span></div>
+
+   <div class="label">Server name or IP address:</div>
+   <input type="text" name="host" value="${host}" /><div class="inf">Must be available through SSH (port 22) via the internet e.g. <span class="tt">john.hopto.org</span></div>
+
+   <div class="label">SSH username:</div>
+   <input type="text" name="sshuser" value="${sshuser}" /><div class="inf">User name to logon to your server via SSH</span></div>
+
+  </div>
+  <div class="blok">
+   <h4>Client settings (this machine)</h4>
+   <div class="label">Root path:</div>
+   <input type="text" name="clientpath" value="${clientpath}" /><div class="inf">Path (on this machine) to store your data e.g. <span class="tt">/home/john/cloudfiles</span></div>
+  </div>
+
+  <div class="tools" style="margin-top:16px;">
+   <button id="btnSaveConfig" title="Save configuration">Save</button>
+   <a href="/" title="Cancel and go back">Cancel</a>
+  </div>
+
+  </form>
+  </div>
+ </body>
+</html>
+
